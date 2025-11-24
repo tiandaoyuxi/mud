@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ink & Blade: AI Wuxia MUD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ['"Crimson Pro"', 'serif'],
+              mono: ['"JetBrains Mono"', 'monospace'],
+            },
+            colors: {
+              ink: {
+                900: '#1c1917',
+                800: '#292524',
+                700: '#44403c',
+                600: '#57534e',
+                500: '#78716c',
+                400: '#a8a29e',
+                300: '#d6d3d1',
+                200: '#e7e5e4',
+                100: '#f5f5f4',
+                50: '#fafaf9',
+              },
+              paper: '#f2f0e6',
+              cinnabar: '#a63434',
+              jade: '#4a7c59',
+              gold: '#b49446',
+              // Semantic Theme Colors
+              theme: {
+                bg: 'var(--bg-main)',
+                panel: 'var(--bg-panel)',
+                element: 'var(--bg-element)',
+                border: 'var(--border-main)',
+                text: 'var(--text-main)',
+                highlight: 'var(--text-highlight)',
+                muted: 'var(--text-muted)',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        /* Dark Mode (Default) - Ink/Stone style */
+        --bg-main: #1c1917; /* ink-900 */
+        --bg-panel: #292524; /* ink-800 */
+        --bg-element: #44403c; /* ink-700 */
+        --border-main: #57534e; /* ink-600 */
+        
+        --text-main: #d6d3d1; /* stone-300 */
+        --text-highlight: #e7e5e4; /* stone-200 */
+        --text-muted: #a8a29e; /* stone-400 */
+      }
+
+      .theme-light {
+        /* Light Mode - Eye Friendly "Warm Rice Paper" Style */
+        --bg-main: #f9f7f3; /* Very soft warm white (Rice Paper) */
+        --bg-panel: #efebe4; /* Slightly darker warm beige for panels */
+        --bg-element: #ffffff; /* Clean white for inputs/cards */
+        --border-main: #dcd6cb; /* Soft warm grey border */
+        
+        --text-main: #4a453e; /* Dark warm charcoal - Readable but soft */
+        --text-highlight: #2b2623; /* Deep brown-black for headers */
+        --text-muted: #9ca3af; /* Neutral grey for less importance */
+      }
+
+      body {
+        background-color: var(--bg-main);
+        color: var(--text-main);
+        transition: background-color 0.3s, color 0.3s;
+      }
+      /* Custom Scrollbar for MUD feel */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--bg-panel);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--text-muted);
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--text-main);
+      }
+      .typing-cursor::after {
+        content: '▋';
+        animation: blink 1s step-start infinite;
+      }
+      @keyframes blink {
+        50% { opacity: 0; }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

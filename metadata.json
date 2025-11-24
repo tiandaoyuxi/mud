@@ -1,0 +1,5 @@
+{
+  "name": "Ink & Blade: AI Wuxia MUD",
+  "description": "A text-based martial arts RPG (MUD) featuring random character generation, faction systems, and AI-powered scene descriptions using Gemini 2.5 Flash.",
+  "requestFramePermissions": []
+}
